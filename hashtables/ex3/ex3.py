@@ -3,14 +3,11 @@ def intersection(arrays):
     result = []
 
     for arr in arrays:
-        # create a hashTable for each array to log each elem in the array
+        # create a hashTable for each array to log each elem in the curr array
         numsMap = {}
 
         for num in arr:
-            if num not in numsMap:
-                numsMap[num] = 0
-
-            numsMap[num] += True
+            numsMap[num] = True
         # append each hashTable to the array of dictionaries
         arr_of_dicts.append(numsMap)
     # we only need to loop thru the first dictionary and check which values from it are in all of the other dicts

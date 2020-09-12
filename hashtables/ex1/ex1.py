@@ -3,6 +3,7 @@ def get_indices_of_item_weights(weights, length, limit):
 
     for i in range(len(weights)):
         curr = weights[i]
+
         if (limit - curr) in hashMap:
             return (i, hashMap[limit - curr])
         else:
