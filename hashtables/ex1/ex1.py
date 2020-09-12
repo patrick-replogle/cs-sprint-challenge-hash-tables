@@ -11,6 +11,7 @@ def get_indices_of_item_weights(weights, length, limit):
     return None
 
 
+# test data below
 weights = [4, 6, 10, 15, 16]
 length = 5
 limit = 21
