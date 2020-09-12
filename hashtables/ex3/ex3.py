@@ -3,7 +3,7 @@ def intersection(arrays):
     result = []
 
     for arr in arrays:
-        # create a hashTable for each array to log the nums featured in each
+        # create a hashTable for each array to log each elem in the array
         numsMap = {}
 
         for num in arr:
@@ -13,7 +13,7 @@ def intersection(arrays):
             numsMap[num] += True
         # append each hashTable to the array of dictionaries
         arr_of_dicts.append(numsMap)
-    # we only need to loop thru the first dictionary and check which values from it are in all of the other arrays
+    # we only need to loop thru the first dictionary and check which values from it are in all of the other dicts
     for key in arr_of_dicts[0]:
         i = 1
         # here we check if curr key is featured in all the other arrays
@@ -21,7 +21,6 @@ def intersection(arrays):
             if key in arr_of_dicts[i]:
                 i += 1
             else:
-                i = 1
                 break
         # if true, this means that the key was featured in all of the arrays and can be added to the result array
         if i == len(arr_of_dicts):
