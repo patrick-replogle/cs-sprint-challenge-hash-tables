@@ -6,13 +6,10 @@ def finder(files, queries):
         queryMap[q] = True
 
     for f in files:
-        i = len(f) - 1
-        # loop backwards from the end of each file till a "/" occurs
-        while f[i-1] != "/":
-            i -= 1
+        arr = f.split("/")
         # i will equal the index of the first character of f's file name
         # now we can check if that file name is in the query hashTable
-        if f[i:] in queryMap:
+        if arr[len(arr) - 1] in queryMap:
             # if so, append the current file to the result array
             result.append(f)
 
