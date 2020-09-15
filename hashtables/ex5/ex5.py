@@ -1,12 +1,17 @@
-# Your code here
-
-
-
 def finder(files, queries):
-    """
-    YOUR CODE HERE
-    """
-    # Your code here
+    result = []
+    queryMap = {}
+    # log each query in a hashTable
+    for q in queries:
+        queryMap[q] = True
+
+    for f in files:
+        arr = f.split("/")
+        # i will equal the index of the first character of f's file name
+        # now we can check if that file name is in the query hashTable
+        if arr[len(arr) - 1] in queryMap:
+            # if so, append the current file to the result array
+            result.append(f)
 
     return result
 
